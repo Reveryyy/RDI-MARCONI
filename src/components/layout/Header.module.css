@@ -1,16 +1,22 @@
 .header {
-  border-bottom: 1px solid var(--colore-linee);
+  position: relative;
+  z-index: 10;
+  padding-block: clamp(12px, 11.3px + 0.19vw, 14px);
+  border-bottom: var(--bordi) solid var(--colore-linee);
+  background-color: var(--colore-sfondo);
 }
 
 .header__container {
-  display: flex;
-  justify-content: space-between;
-  padding-left: var(--margine-pagina-laterale);
-  padding-right: var(--margine-pagina-laterale);
+  max-width: var(--larghezza-contenuto);
+  margin-inline: auto;
+  padding-inline: var(--margine-pagina-laterale);
 
-  margin: 0px var(--margine-pagina-laterale);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* ---------- Logo ---------- */
 .logo__container {
   display: flex;
   align-items: center;
@@ -34,10 +40,97 @@
   font-family: var(--font-display);
 }
 
+.logo_text {
+  margin: 0;
+  line-height: 1;
+}
+
 .logo__titolo {
+  margin: 0;
   color: var(--colore-testo);
-  font-size: var(--size-testo-logo-menu);
+  font-size: var(--size-titolo-menu);
   text-align: center;
   font-weight: bold;
   font-family: var(--font-display);
+  white-space: nowrap;
+}
+
+/* ---------- Contenitore di menu + hamburger ---------- */
+.menu__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  position: relative;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--bordi) solid var(--colore-linee);
+  border-radius: 50%;
+  background-color: var(--colore-card);
+  color: var(--colore-testo);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.hamburger:hover,
+.hamburger[aria-expanded="true"] {
+  border-color: var(--colore-primario);
+  color: var(--colore-primario);
+}
+
+.hamburger:active {
+  background-color: var(--colore-card-2);
+}
+
+.hamburger:focus-visible {
+  outline: 3px solid var(--colore-primario);
+  outline-offset: 2px;
+}
+
+/* ---------- Sfondo scurito dietro al menu aperto ---------- */
+.sfondo {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background-color: rgba(14, 17, 34, 0.4);
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sfondo {
+    animation: appare 180ms ease-out;
+  }
+}
+
+@keyframes appare {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Solo telefono ---------- */
+@media (max-width: 600px) {
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .sfondo {
+    display: block;
+  }
 }

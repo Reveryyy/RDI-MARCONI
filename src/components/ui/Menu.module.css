@@ -1,29 +1,115 @@
 .menu {
   display: flex;
-  list-style: none;
-  gap: 2px;
 }
 
 .menu ul {
   list-style: none;
   display: flex;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--padding-laterale-pulsante-menu);
+
   color: var(--colore-testo);
   font-size: var(--size-testo-menu);
   font-family: var(--font-display);
   font-weight: 400;
+  white-space: nowrap;
   text-decoration: none;
 
-  padding: var(--padding-laterale-pulsante-menu);
-  min-height: 44px;
   border: 0px solid transparent;
   border-radius: var(--raggio-pillola);
 
   transition: all 0.2s ease-in-out;
 }
+
 .menu li a:hover {
   cursor: pointer;
   background-color: var(--hover-sfondo);
+  color: var(--hover-testo);
+}
+
+.menu li a:active {
+  background-color: var(--premuto-sfondo);
+}
+
+.menu li a:focus-visible {
+  outline: 3px solid var(--colore-primario);
+  outline-offset: 2px;
+}
+
+/* ---------- Telefono: le voci stanno in una card sotto l'hamburger ---------- */
+@media (max-width: 600px) {
+  /* Chiuso: nascosto */
+  .menu {
+    display: none;
+  }
+
+  /* Aperto: card sotto l'hamburger */
+  .menu.menu__aperto {
+    display: block;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 2;
+    width: min(300px, calc(100vw - 2 * var(--margine-pagina-laterale)));
+    padding: 8px;
+    border: var(--bordi) solid var(--colore-linee);
+    border-radius: var(--raggio-card);
+    background-color: var(--colore-card);
+    box-shadow: var(--ombra-menu, 0 16px 40px rgba(20, 26, 51, 0.2));
+    transform-origin: top right;
+  }
+
+  .menu.menu__aperto ul {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .menu.menu__aperto li a {
+    display: flex;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  /* Freccia a destra di ogni voce */
+  .menu.menu__aperto li a::after {
+    content: "→";
+    color: var(--colore-testo-2);
+    transition:
+      transform 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .menu.menu__aperto li a:hover::after {
+    color: var(--colore-primario);
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .menu.menu__aperto {
+    animation: entra 180ms ease-out;
+  }
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
