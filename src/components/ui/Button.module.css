@@ -15,7 +15,6 @@
 
 .button:hover {
   background-color: var(--hover-sfondo);
-  transform: translateY(-2px);
 }
 
 .primario {
