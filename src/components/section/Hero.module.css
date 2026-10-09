@@ -1,0 +1,105 @@
+.hero {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mini_title__container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--colore-accento);
+  color: var(--colore-testo-accento);
+  padding: 12px 15px;
+  border: 0;
+  border-radius: var(--raggio-pillola);
+
+  font-size: var(--size-etichette);
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.mini_title__container > * {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.hero_body__container {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.hero_body__container > * {
+  margin: 0;
+}
+
+.text_title__container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.text_title__container > * {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.tessera__container {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--size-titolo-hero);
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.color_primario {
+  color: var(--colore-primario);
+}
+
+.motto {
+  font-family: var(--font-display);
+  font-size: var(--size-testo-motto);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.description {
+  max-width: 550px;
+  font-size: var(--size-testo);
+  color: var(--colore-testo-2);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.buttons__row {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .text_title__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0.3em;
+  }
+}

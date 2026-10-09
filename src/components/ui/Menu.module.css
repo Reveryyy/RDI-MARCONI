@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu li a {
+  color: var(--colore-testo);
+  font-size: var(--size-testo-menu);
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-decoration: none;
+
+  padding: var(--padding-laterale-pulsante-menu);
+  min-height: 44px;
+  border: 0px solid transparent;
+  border-radius: var(--raggio-pillola);
+
+  transition: all 0.2s ease-in-out;
+}
+.menu li a:hover {
+  cursor: pointer;
+  background-color: var(--hover-sfondo);
+}

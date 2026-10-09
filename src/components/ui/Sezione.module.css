@@ -1,0 +1,7 @@
+.sezione {
+  padding-inline: calc(
+    var(--margine-pagina-laterale) +
+      max(0px, (100% - var(--larghezza-contenuto)) / 2)
+  );
+  padding-block: var(--padding-verticale-sezioni);
+}

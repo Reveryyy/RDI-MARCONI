@@ -1,0 +1,29 @@
+.button {
+  padding: var(--padding-laterale-pulsante-menu);
+  border: 2px solid var(--colore-testo);
+  border-radius: var(--raggio-pillola);
+
+  text-decoration: none;
+
+  font-size: var(--size-testo);
+  color: var(--colore-testo);
+  font-weight: bold;
+  font-family: var(--font-body);
+
+  transition: all 0.25s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--hover-sfondo);
+  transform: translateY(-2px);
+}
+
+.primario {
+  background-color: var(--colore-primario);
+  color: var(--colore-testo-primario);
+  border-color: transparent;
+}
+
+.primario:hover {
+  background-color: var(--colore-primario);
+}

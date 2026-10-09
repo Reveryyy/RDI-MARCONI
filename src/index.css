@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Grandezze TESTO */
+  --size-titolo-hero: clamp(44px, 21.7px + 5.71vw, 104px);
+  --size-testo-motto: clamp(22px, 17.5px + 1.14vw, 34px);
+  --size-titolo-sezione: clamp(30px, 21.8px + 2.1vw, 52px);
+  --size-candidato: clamp(22px, 20.5px + 0.38vw, 26px);
+  --size-titolo-programma: clamp(18px, 16.9px + 0.29vw, 21px);
+  --size-numero-big: clamp(36px, 33px + 0.76vw, 44px);
+  --size-numero-scheda: clamp(40px, 34.8px + 1.33vw, 54px);
+  --size-testo: clamp(16px, 15.6px + 0.1vw, 17px);
+  --size-etichette: 14px;
+
+  --size-testo-menu: clamp(13px, 12.3px + 0.19vw, 15px);
+  --size-titolo-menu: clamp(15px, 12.8px + 0.57vw, 21px);
+  --size-logo-menu: clamp(32px, 28.3px + 0.95vw, 42px);
+  --size-testo-logo-menu: clamp(17px, 15.1px + 0.48vw, 22px);
+
+  /* Grandezze SPAZI */
+  --margine-pagina-laterale: clamp(16px, 13px + 0.76vw, 24px);
+  --padding-verticale-sezioni: clamp(56px, 41px + 3.81vw, 96px);
+  --padding-card: clamp(22px, 18.3px + 0.95vw, 32px);
+  --space-card: clamp(12px, 8.2px + 0.95vw, 20px);
+  --larghezza-contenuto: 1200px;
+
+  --padding-laterale-pulsante-menu: clamp(6px, 2.3px + 0.95vw, 16px);
+  --space-logo-titolo-menu: clamp(8px, 7.3px + 0.19vw, 10px);
+
+  /* Forme COMPONENTI */
+  --raggio-card: clamp(20px, 17.8px + 0.57vw, 26px);
+  --raggio-plus: clamp(24px, 21px + 0.76vw, 32px);
+
+  --raggio-logo-menu: clamp(10px, 8.9px + 0.29vw, 13px);
+
+  --raggio-pillola: 999px;
+  --pulsante-altezza-minima: 48px;
+  --accordion-altezza-minima: 64px;
+
+  --avatar-candidati: clamp(96px, 90px + 1.52vw, 112px);
+  --icone: clamp(96px, 90px + 1.52vw, 112px);
+  --bordi: 1px;
+
+  /* Font FAMILY */
+  --font-display: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  /* Colori HOVER */
+  --hover-testo: #f2f4ff;
+  --hover-sfondo: #eceef8;
+
+  --colore-sfondo: #f6f7fb;
+  --colore-card: #ffffff;
+  --colore-card-2: #eceef8;
+  --colore-testo: #141a33;
+  --colore-testo-2: #4f5675;
+  --colore-linee: #d9ddee;
+  --colore-primario: #3b3bf0;
+  --colore-testo-primario: #ffffff;
+  --colore-accento: #ffc23d;
+  --colore-testo-accento: #141a33;
+
+  @media (max-weight: 600px) {
+    --size-etichette: 13px;
+  }
+  @media (max-weight: 1023) {
+    --size-etichetta: 14px;
+  }
+}
+
+html {
+  background-color: var(--colore-sfondo);
+  color: var(--colore-testo);
+  scroll-behavior: smooth;
+}

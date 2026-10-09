@@ -1,0 +1,92 @@
+.contenitore {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cerchio giallo dietro, in alto a destra */
+.cerchio_pieno {
+  position: absolute;
+  top: 0;
+  right: 8%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--colore-accento);
+}
+
+/* Anello blu dietro, in basso a sinistra */
+.cerchio_anello {
+  position: absolute;
+  bottom: 10px;
+  left: 4%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 14px solid var(--colore-primario);
+}
+
+/* La card, ruotata di 3 gradi verso sinistra */
+.scheda {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: var(--padding-card);
+  background-color: var(--colore-card);
+  border: 2px solid var(--colore-testo);
+  border-radius: var(--raggio-plus);
+  transform: rotate(-3deg);
+}
+
+.etichetta {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--colore-testo-2);
+}
+
+.numero {
+  font-family: var(--font-display);
+  font-size: var(--size-numero-scheda);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.linea {
+  height: 2px;
+  background-color: var(--colore-linee);
+}
+
+.voto {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.casella {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--colore-testo);
+  border-radius: 10px;
+  color: var(--colore-primario);
+}
+
+.nome_lista {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.motto {
+  font-size: 15px;
+  color: var(--colore-testo-2);
+}
