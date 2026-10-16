@@ -1,5 +1,6 @@
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   padding-block: clamp(12px, 11.3px + 0.19vw, 14px);
   border-bottom: var(--bordi) solid var(--colore-linee);
@@ -21,28 +22,51 @@
   display: flex;
   align-items: center;
   gap: var(--space-logo-titolo-menu);
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
-.logo__div {
+.logo__container:hover {
+  transform: translateY(-2px);
+}
+
+.destra {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: var(--colore-primario);
-  width: var(--size-logo-menu);
-  height: var(--size-logo-menu);
-
-  border-radius: var(--raggio-logo-menu);
-
-  color: var(--colore-testo-primario);
-  font-size: var(--size-testo-logo-menu);
-  text-align: center;
-  font-weight: bold;
-  font-family: var(--font-display);
+  gap: 8px;
 }
 
-.logo_text {
-  margin: 0;
-  line-height: 1;
+/* ---------- Tema chiaro/scuro ---------- */
+.tema {
+  position: relative;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--bordi) solid var(--colore-linee);
+  border-radius: 50%;
+  background-color: var(--colore-card);
+  color: var(--colore-testo);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.3s ease;
+}
+
+.tema:hover {
+  border-color: var(--colore-primario);
+  color: var(--colore-primario);
+  transform: rotate(20deg);
+}
+
+.tema:focus-visible {
+  outline: 3px solid var(--colore-primario);
+  outline-offset: 2px;
 }
 
 .logo__titolo {

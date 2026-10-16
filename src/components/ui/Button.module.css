@@ -1,5 +1,8 @@
 .button {
-  padding: var(--padding-laterale-pulsante-menu);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--pulsante-altezza-minima);
+  padding: 0 calc(var(--padding-laterale-pulsante-menu) + 10px);
   border: 2px solid var(--colore-testo);
   border-radius: var(--raggio-pillola);
 
@@ -10,11 +13,24 @@
   font-weight: bold;
   font-family: var(--font-body);
 
-  transition: all 0.25s ease-in-out;
+  transition:
+    transform 0.2s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .button:hover {
   background-color: var(--hover-sfondo);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--colore-primario);
+  outline-offset: 2px;
 }
 
 .primario {
@@ -25,4 +41,5 @@
 
 .primario:hover {
   background-color: var(--colore-primario);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--colore-primario) 40%, transparent);
 }

@@ -103,3 +103,59 @@
     column-gap: 0.3em;
   }
 }
+
+/* ---------- Animazioni d'entrata ---------- */
+.buttons__row {
+  flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .entra {
+    opacity: 0;
+    animation: sale 0.7s ease-out forwards;
+  }
+
+  .mini_title__container.entra {
+    animation-delay: 0.05s;
+  }
+  .text_title__container.entra {
+    animation-delay: 0.15s;
+  }
+  .motto.entra {
+    animation-delay: 0.3s;
+  }
+  .description.entra {
+    animation-delay: 0.42s;
+  }
+  .buttons__row.entra {
+    animation-delay: 0.55s;
+  }
+
+  .entra_scheda {
+    opacity: 0;
+    animation: scheda-entra 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.35s
+      forwards;
+  }
+
+  @keyframes sale {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes scheda-entra {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

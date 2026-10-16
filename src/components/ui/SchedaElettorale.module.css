@@ -90,3 +90,99 @@
   font-size: 15px;
   color: var(--colore-testo-2);
 }
+
+/* ---------- Candidati sulla scheda ---------- */
+.candidati {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.candidati li {
+  padding-left: 14px;
+  border-left: 3px solid var(--colore-primario);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ---------- Animazioni ---------- */
+.scheda {
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2),
+    box-shadow 0.4s ease;
+}
+
+.scheda:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 50px rgba(20, 26, 51, 0.18);
+}
+
+.spunta {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spunta {
+    stroke-dashoffset: 1;
+    animation: disegna 0.6s ease-out 1.2s forwards;
+  }
+
+  .casella {
+    animation: pulsa 0.5s ease-out 1.7s;
+  }
+
+  .cerchio_pieno {
+    animation: fluttua 6s ease-in-out infinite;
+  }
+
+  .cerchio_anello {
+    animation: fluttua 7s ease-in-out -2s infinite reverse;
+  }
+
+  .candidati li {
+    opacity: 0;
+    animation: da-sinistra 0.5s ease-out forwards;
+  }
+  .candidati li:nth-child(1) {
+    animation-delay: 0.9s;
+  }
+  .candidati li:nth-child(2) {
+    animation-delay: 1.05s;
+  }
+  .candidati li:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+
+  @keyframes disegna {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes pulsa {
+    50% {
+      transform: scale(1.18);
+    }
+  }
+
+  @keyframes fluttua {
+    50% {
+      transform: translate(8px, -14px);
+    }
+  }
+
+  @keyframes da-sinistra {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

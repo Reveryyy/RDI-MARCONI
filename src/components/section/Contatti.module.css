@@ -1,0 +1,92 @@
+.contatti {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: calc(var(--padding-card) * 1.5);
+  border-radius: var(--raggio-plus);
+  background-color: var(--colore-primario);
+  color: var(--colore-testo-primario);
+}
+
+.etichetta {
+  margin: 0;
+  font-size: var(--size-etichette);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
+}
+
+.titolo {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--size-titolo-sezione);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.testo {
+  max-width: 520px;
+  margin: 0;
+  font-size: var(--size-testo);
+  line-height: 1.5;
+}
+
+.azioni {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--pulsante-altezza-minima);
+  padding: 0 22px;
+  border-radius: var(--raggio-pillola);
+  background-color: var(--colore-testo-primario);
+  color: var(--colore-primario);
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.instagram:hover {
+  transform: translateY(-2px);
+}
+
+.instagram:focus-visible {
+  outline: 3px solid var(--colore-testo-primario);
+  outline-offset: 3px;
+}
+
+/* il pulsante secondario deve restare leggibile sul blu */
+.box :global(a):not(.instagram) {
+  color: var(--colore-testo-primario);
+  border-color: var(--colore-testo-primario);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 24px;
+  border-top: var(--bordi) solid var(--colore-linee);
+  font-size: var(--size-testo);
+  color: var(--colore-testo-2);
+}
+
+.footer strong {
+  color: var(--colore-testo);
+  font-family: var(--font-display);
+}

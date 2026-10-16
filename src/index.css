@@ -50,8 +50,9 @@
   --font-body: "Figtree", system-ui, sans-serif;
 
   /* Colori HOVER */
-  --hover-testo: #f2f4ff;
+  --hover-testo: var(--colore-primario);
   --hover-sfondo: #eceef8;
+  --premuto-sfondo: #dfe2f3;
 
   --colore-sfondo: #f6f7fb;
   --colore-card: #ffffff;
@@ -64,16 +65,53 @@
   --colore-accento: #ffc23d;
   --colore-testo-accento: #141a33;
 
-  @media (max-weight: 600px) {
+  --ombra-menu: 0 16px 40px rgba(20, 26, 51, 0.2);
+
+  @media (max-width: 600px) {
     --size-etichette: 13px;
   }
-  @media (max-weight: 1023) {
-    --size-etichetta: 14px;
-  }
+}
+
+/* Tema scuro */
+:root[data-theme="dark"] {
+  --hover-sfondo: #1e2342;
+  --premuto-sfondo: #262c52;
+
+  --colore-sfondo: #0e1122;
+  --colore-card: #171b33;
+  --colore-card-2: #1e2342;
+  --colore-testo: #f2f4ff;
+  --colore-testo-2: #a3aac9;
+  --colore-linee: #2a3058;
+  --colore-primario: #8e8eff;
+  --colore-testo-primario: #0e1122;
+  --ombra-menu: 0 16px 40px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
 }
 
 html {
   background-color: var(--colore-sfondo);
   color: var(--colore-testo);
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

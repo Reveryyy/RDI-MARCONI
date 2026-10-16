@@ -5,3 +5,7 @@
   );
   padding-block: var(--padding-verticale-sezioni);
 }
+
+.sezione {
+  scroll-margin-top: 60px;
+}
